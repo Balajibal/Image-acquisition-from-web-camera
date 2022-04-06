@@ -29,20 +29,39 @@ Anaconda - Python 3.7
 
 ## Program:
 ``` Python
-### Developed By:
-### Register No:
+### Developed By: BALAJI N
+### Register No: 212220230006
 
 ## i) Write the frame as JPG file
-
+import cv2
+img = cv2.VideoCapture(0)
 
 
 
 ## ii) Display the video
-
+while(True):
+     ret,frame=img.read()
+     cv2.imwrite('mypiclook.jpg',frame)
+     cv2.imshow('frame', frame)
+     if cv2.waitKey(1) == ord('q'):
+            break
 
 
 
 ## iii) Display the video by resizing the window
+while True:
+                ret, frame = cap.read()
+                width = int(cap.get(3))
+                height = int(cap.get(4))
+                image = np.zeros(frame.shape, np.uint8)
+                smaller_frame = cv2.resize(frame, (0,0), fx = 0.5, fy=0.5)
+                image[:height//2, :width//2] = smaller_frame
+                image[height//2:, :width//2] = smaller_frame
+                image[:height//2, width//2:] = smaller_frame
+                image[height//2:, width//2:] = smaller_frame
+                videoCaptureObject.release()
+                cv2.destroyAllWindows()
+
 
 
 
@@ -62,13 +81,13 @@ Anaconda - Python 3.7
 ## Output
 
 ### i) Write the frame as JPG image
-</br>
-</br>
+![Screenshot (24)](https://user-images.githubusercontent.com/75234946/162027009-cefbb803-442f-4b02-a1a2-7cf7ea61aa1f.png)
+
 
 
 ### ii) Display the video
-</br>
-</br>
+![Screenshot (23)](https://user-images.githubusercontent.com/75234946/162027162-427658ab-8209-4a41-984a-40b60ff3f11a.png)
+
 
 
 ### iii) Display the video by resizing the window
