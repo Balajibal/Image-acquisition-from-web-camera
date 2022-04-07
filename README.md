@@ -68,7 +68,23 @@ while True:
 
 
 ## iv) Rotate and display the video
-
+while True:
+    ret, frame = cap.read()
+    width = int(cap.get(3))
+    height = int(cap.get(4))
+    
+    image = np.zeros(frame.shape, np.uint8)
+    smaller_frame = cv2.resize(frame, (0,0), fx=0.5, fy=0.5)
+    image[:height//2, :width//2] = cv2.rotate(smaller_frame,cv2.cv2.ROTATE_180)
+    image[:height//2, width//2:] = smaller_frame
+    image[height//2:, :width//2] = cv2.rotate(smaller_frame,cv2.cv2.ROTATE_180)
+    image[height//2:, width//2:] = smaller_frame
+    
+    cv2.imshow('frame', image)
+    if cv2.waitKey(1) == ord('q'):
+        break
+cap.release()
+cv2.destroyAllwindows()
 
 
 
@@ -91,14 +107,14 @@ while True:
 
 
 ### iii) Display the video by resizing the window
-</br>
-</br>
+![resizeimg](https://user-images.githubusercontent.com/75234946/162176472-534577e0-f5df-47df-9675-d67bdc2d96a6.jpeg)
+
 
 
 
 ### iv) Rotate and display the video
-</br>
-</br>
+![rotateimg](https://user-images.githubusercontent.com/75234946/162176707-0a2dade3-dbd7-4e57-921b-ae468f033752.jpeg)
+
 
 
 
