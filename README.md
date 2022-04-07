@@ -13,19 +13,19 @@ iv) Rotate and display the video
 Anaconda - Python 3.7
 ## Algorithm
 ### Step 1:
-<br>
+Import cv and write the image as frame.
 
 ### Step 2:
-<br>
+Display the video and set q as a key to quit the process
 
 ### Step 3:
-<br>
+Import numpy and resize the frame.Display the resized frame
 
 ### Step 4:
-<br>
+Rotate the frame each time so that each image will be from a different quadrant
 
 ### Step 5:
-<br>
+Display the rotated frame
 
 ## Program:
 ``` Python
